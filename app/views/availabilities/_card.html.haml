@@ -1,0 +1,6 @@
+.availability-card
+  .scheduled-date
+    = availability.scheduled_date.to_fs(:basic_time)
+  .manager-name
+    %span Managed by:
+    = availability.manager_name

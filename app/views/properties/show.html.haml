@@ -1,5 +1,4 @@
 .property
-
   %h1.name= @property.name
   %p.address= @property.address
   %p.description= @property.description
@@ -16,10 +15,5 @@
       .day
         = date.to_datetime.to_fs(:basic_date)
       - availabilities.each do |availability|
-        .availability-card
-          .scheduled-date
-            - if availability.scheduled_date.present?
-              = availability.scheduled_date.to_fs(:basic_time)
-          .manager-name
-            %span Managed by:
-            = availability.manager_name
+        = render "availabilities/card", availability: availability
+  = paginate @availabilities
