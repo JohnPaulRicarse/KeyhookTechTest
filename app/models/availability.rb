@@ -7,7 +7,7 @@ class Availability < ApplicationRecord
   belongs_to :property
   has_many :bookings
 
-  scope :future, -> { where('scheduled_date > ?', DateTime.now) }
+  scope :future, -> { where("scheduled_date > ?", DateTime.now) }
 
   private
 
