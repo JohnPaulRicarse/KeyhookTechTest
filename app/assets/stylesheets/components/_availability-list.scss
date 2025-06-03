@@ -1,20 +1,30 @@
 @use "shared/variables";
 
 .availability-list {
-  margin-top: 0.2rem;
+  margin-top: 0.5rem;
   display: flex;
   flex-wrap: wrap;
+  border-top: 1px solid variables.$black;
+  border-bottom: 1px solid variables.$black;
+  background-color: variables.$grey;
+
+  .day {
+    margin: 1rem 0 0.5rem 1rem;
+    font-size: 1.5rem;
+  }
+
   .availability-card {
     flex: 100%;
     display: flex;
     flex-wrap: wrap;
     background-color: variables.$grey;
-    padding: 1rem;
     color: variables.$black;
+    padding: 1rem;
+    margin-left: 1rem;
 
     transition: 0.2s all ease-in-out;
 
-    &:nth-child(odd) {
+    &:nth-child(even) {
       background-color: variables.$light-grey;
     }
 

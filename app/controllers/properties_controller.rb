@@ -8,7 +8,7 @@ class PropertiesController < ApplicationController
   end
 
   def show
-    @availabilities = @property.availabilities
+    @grouped_availabilities = @property.availabilities.group_by { |a| a.scheduled_date.to_fs(:basic_date) }
   end
 
   def new

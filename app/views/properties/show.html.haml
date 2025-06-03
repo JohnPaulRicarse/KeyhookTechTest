@@ -11,12 +11,15 @@
 
 .availabilities
   %h2 Availabilities
-  .availability-list
-    - @availabilities.each do |availability|
-      .availability-card
-        .scheduled-date
-          - if availability.scheduled_date.present?
-            = availability.scheduled_date.to_fs(:basic_time)
-        .manager-name
-          %span Managed by:
-          = availability.manager_name
+  - @grouped_availabilities.each do |date, availabilities|
+    .availability-list
+      .day
+        = date.to_datetime.to_fs(:basic_date)
+      - availabilities.each do |availability|
+        .availability-card
+          .scheduled-date
+            - if availability.scheduled_date.present?
+              = availability.scheduled_date.to_fs(:basic_time)
+          .manager-name
+            %span Managed by:
+            = availability.manager_name
