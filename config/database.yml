@@ -10,6 +10,7 @@ development:
   database: tech_test_development
 test:
   <<: *default
+  host: <%= ENV['POSTGRES_HOST'] {'localhost'} %>
   database: tech_test_test
 production:
   primary: &primary_production
