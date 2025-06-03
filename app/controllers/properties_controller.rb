@@ -8,6 +8,7 @@ class PropertiesController < ApplicationController
   end
 
   def show
+    @availabilities = @property.availabilities
   end
 
   def new

@@ -5,9 +5,18 @@
   %p.description= @property.description
 
   .actions
+    = link_to "New Availability", new_property_availability_path(@property), class: "button"
     = link_to "Edit", edit_property_path(@property), class: "button"
     = link_to "Destroy", property_path(@property), class: "button -red", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this property?" }
 
 .availabilities
-  .actions
-    = link_to "New Availability", new_property_availability_path(@property), class: "button"
+  %h2 Availabilities
+  .availability-list
+    - @availabilities.each do |availability|
+      .availability-card
+        .scheduled-date
+          - if availability.scheduled_date.present?
+            = availability.scheduled_date.to_fs(:basic_time)
+        .manager-name
+          %span Managed by:
+          = availability.manager_name

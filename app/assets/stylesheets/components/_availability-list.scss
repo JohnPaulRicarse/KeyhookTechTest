@@ -1,0 +1,36 @@
+@use "shared/variables";
+
+.availability-list {
+  margin-top: 0.2rem;
+  display: flex;
+  flex-wrap: wrap;
+  .availability-card {
+    flex: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: variables.$grey;
+    padding: 1rem;
+    color: variables.$black;
+
+    transition: 0.2s all ease-in-out;
+
+    &:nth-child(odd) {
+      background-color: variables.$light-grey;
+    }
+
+    &:hover {
+      transform: translate(0, -5px);
+      box-shadow: 0px 5px variables.$black;
+    }
+
+    .scheduled-date {
+      display: block;
+      width: 100%;
+      font-size: 2rem;
+    }
+
+    .manager-name {
+      margin: 0.3rem 0;
+    }
+  }
+}
