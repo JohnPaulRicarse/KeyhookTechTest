@@ -13,7 +13,9 @@ class AvailabilitiesController < ApplicationController
   end
 
   def create
-    if @property.availabilities.create(availability_params)
+    @availability = @property.availabilities.new(availability_params)
+
+    if @availability.save
       flash[:notice] = "Availability successfully created."
       redirect_to property_path(@property)
     else

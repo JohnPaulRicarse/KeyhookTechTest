@@ -1,7 +1,13 @@
+- bool_future_only = params["future_only"] == "1"
+- show_future_params = bool_future_only ? "0" : "1"
+- show_future_text = bool_future_only ? "Show All" : "Only Future Timeslots"
+
 = render "properties/details", property: @property, show_actions: true
 
 .availabilities
-  %h2 Availabilities
+  %h2 Available Timeslots
+  .actions
+    = link_to show_future_text, property_path(@property, future_only: show_future_params), class: "button"
   - @grouped_availabilities.each do |date, availabilities|
     .availability-list
       .day
