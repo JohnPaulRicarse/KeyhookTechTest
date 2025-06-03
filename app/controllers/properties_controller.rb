@@ -17,6 +17,10 @@ class PropertiesController < ApplicationController
                                .page(params[:page])
                                .per(5)
 
+    unless params["show_all"] == "0"
+      @availabilities = @availabilities.future
+    end
+
     @grouped_availabilities = @availabilities.group_by { |a| a.scheduled_date.to_fs(:basic_date) }
   end
 
