@@ -18,10 +18,10 @@ require 'ffaker'
     address: "#{street_address}, #{FFaker::Address.neighborhood}, #{FFaker::Address.city}"
   )
 
-  15.times do
+  rand(15).times do
     property.availabilities.create(
       manager_name: FFaker::Name.name,
-      scheduled_date: FFaker::Time.between(DateTime.now, (DateTime.now + 1.week))
+      scheduled_date: FFaker::Time.between((DateTime.now - 1.day), (DateTime.now + 1.week))
     )
   end
 end
