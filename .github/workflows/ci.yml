@@ -82,6 +82,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Startup Postgres
+        run: sudo systemctl start postgresql.service
+
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
