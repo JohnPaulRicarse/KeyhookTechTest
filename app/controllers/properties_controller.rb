@@ -25,7 +25,7 @@ class PropertiesController < ApplicationController
       redirect_to property_path(@property)
     else
       flash[:error] = "Failed to create property."
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -35,6 +35,7 @@ class PropertiesController < ApplicationController
       redirect_to property_path(@property)
     else
       flash[:error] = "Failed to edit property."
+      render :edit, status: :unprocessable_entity
     end
   end
 
