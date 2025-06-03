@@ -6,7 +6,7 @@ gem "haml-rails", "~> 2.0"
 # The modern asset pipeline for Rails [https://github.com/rails/propshaft]
 gem "propshaft"
 # Use sqlite3 as the database for Active Record
-gem 'pg', '1.6.0.rc1'
+gem "pg", "1.6.0.rc1"
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
@@ -50,7 +50,7 @@ group :development, :test do
   gem "brakeman", require: false
   gem "html2haml"
   gem "ffaker"
-  gem 'pry', '~> 0.15.0'
+  gem "pry", "~> 0.15.0"
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false

@@ -1,7 +1,7 @@
 class PropertiesController < ApplicationController
   # Only allow modern browsers supporting webp images, web push, badges, import maps, CSS nesting, and CSS :has.
   allow_browser versions: :modern
-  before_action :find_property, only: [:show, :edit, :update, :destroy]
+  before_action :find_property, only: [ :show, :edit, :update, :destroy ]
 
   def index
     @properties = Property.all.order(created_at: :desc).page(params[:page]).per(10)
