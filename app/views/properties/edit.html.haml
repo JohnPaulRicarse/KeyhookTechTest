@@ -1,2 +1,5 @@
-%h1= "Editing #{@property.name}"
+%h1
+  Editing:
+  = link_to " #{@property.name}", property_path(@property)
+
 = render "form", property: @property

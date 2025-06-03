@@ -1,0 +1,26 @@
+@use "shared/variables";
+
+.availability {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid variables.$black;
+  display: flex;
+  flex-wrap: wrap;
+
+  .book-for {
+    color: variables.$dark-grey;
+    font-weight: bold;
+    flex: 100%;
+  }
+
+  .datetime {
+    margin-top: 1rem;
+    font-size: 2rem;
+    flex: 1 1 calc(100% - 200px);
+  }
+
+  .actions {
+    flex: 1 1 200px;
+    justify-content: right;
+  }
+}

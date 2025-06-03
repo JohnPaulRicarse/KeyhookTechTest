@@ -8,7 +8,7 @@ class PropertiesController < ApplicationController
   end
 
   def show
-    @availabilities = @property.availabilities.order(scheduled_date: :desc).page(params[:page]).per(5)
+    @availabilities = @property.availabilities.order(scheduled_date: :asc).page(params[:page]).per(5)
     @grouped_availabilities = @availabilities.group_by { |a| a.scheduled_date.to_fs(:basic_date) }
   end
 

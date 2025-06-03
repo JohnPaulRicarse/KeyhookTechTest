@@ -1,4 +1,4 @@
-.availability-card
+= link_to property_availability_path(property, availability), class: "availability-card" do
   .scheduled-date
     = availability.scheduled_date.to_fs(:basic_time)
   .manager-name

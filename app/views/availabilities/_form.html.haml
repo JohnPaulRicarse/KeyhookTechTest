@@ -2,7 +2,7 @@
   .flash.-error
     = error
 
-= form_with model: availability, url: property_availabilities_path, class: "form" do |form|
+= form_with model: availability, url: path, class: "form" do |form|
   .form-group
     = form.label :manager_name
     = form.text_field :manager_name, required: true
