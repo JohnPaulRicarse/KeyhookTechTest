@@ -1,7 +1,7 @@
 = render "properties/details", property: @property, show_actions: true
 
 .availabilities
-  %h2 Availabilities
+  %h2 Available Timeslots
   - @grouped_availabilities.each do |date, availabilities|
     .availability-list
       .day

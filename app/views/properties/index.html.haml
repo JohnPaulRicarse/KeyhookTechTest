@@ -3,8 +3,12 @@
 .property-list
   - @properties.each do |property|
     = link_to property, class: "property-card" do
-      %h1.name= property.name
-      %span.address= property.address
-      %p.description= truncate(property.description, length: 150)
+      .details
+        %h1.name= property.name
+        %span.address= property.address
+        %p.description= truncate(property.description, length: 150)
+        %p.availabilities
+          = property.availabilities.count
+          Available timeslots
 
 = paginate @properties

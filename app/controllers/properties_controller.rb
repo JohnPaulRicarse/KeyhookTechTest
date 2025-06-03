@@ -4,11 +4,19 @@ class PropertiesController < ApplicationController
   before_action :find_property, only: [ :show, :edit, :update, :destroy ]
 
   def index
-    @properties = Property.all.order(created_at: :desc).page(params[:page]).per(10)
+    @properties = Property.all
+                          .order(created_at: :desc)
+                          .eager_load(:availabilities)
+                          .page(params[:page])
+                          .per(10)
   end
 
   def show
-    @availabilities = @property.availabilities.order(scheduled_date: :asc).page(params[:page]).per(5)
+    @availabilities = @property.availabilities
+                               .order(scheduled_date: :asc)
+                               .page(params[:page])
+                               .per(5)
+
     @grouped_availabilities = @availabilities.group_by { |a| a.scheduled_date.to_fs(:basic_date) }
   end
 
