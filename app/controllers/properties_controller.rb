@@ -5,4 +5,8 @@ class PropertiesController < ApplicationController
   def index
     @properties = Property.all.order(:created_at).page(params[:page]).per(10)
   end
+
+  def show
+    @property = Property.find(params[:id])
+  end
 end

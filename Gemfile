@@ -50,6 +50,7 @@ group :development, :test do
   gem "brakeman", require: false
   gem "html2haml"
   gem "ffaker"
+  gem 'pry', '~> 0.15.0'
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
