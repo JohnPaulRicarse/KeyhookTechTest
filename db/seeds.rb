@@ -21,7 +21,7 @@ require 'ffaker'
   15.times do
     property.availabilities.create(
       manager_name: FFaker::Name.name,
-      scheduled_date: FFaker::Time.between(DateTime.now,(DateTime.now + 1.week))
+      scheduled_date: FFaker::Time.between(DateTime.now, (DateTime.now + 1.week))
     )
   end
 end
