@@ -9,6 +9,10 @@ class Availability < ApplicationRecord
 
   scope :future, -> { where("scheduled_date > ?", DateTime.now) }
 
+  def bookable?
+    scheduled_date > DateTime.now
+  end
+
   private
 
   def scheduled_date_is_in_future

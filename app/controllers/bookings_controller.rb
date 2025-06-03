@@ -10,7 +10,8 @@ class BookingsController < ApplicationController
   end
 
   def create
-    if @availability.bookings.create(booking_params)
+    @booking = @availability.bookings.new(booking_params)
+    if @booking.save
       flash[:notice] = "Successfully booked this timeslot."
       redirect_to property_availability_path(@property, @availability)
     else
