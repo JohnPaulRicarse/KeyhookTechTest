@@ -1,8 +1,17 @@
-= render "properties/details", property: @property
+%article.article
+  %section.section
+    = render "properties/details", property: @property, show_actions: true
 
-.availability
-  %p.book-for Bookings For:
-  .datetime= @availability.scheduled_date.to_fs(:full_readable)
-  .actions
-    = link_to "Edit", edit_property_availability_path(@property, @availability), class: "button"
-    = link_to "Destroy", property_availability_path(@property, @availability), class: "button -red", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this availability?" }
+%article.article
+  %section.section
+    .availability
+      %p.book-for Bookings For:
+      .datetime= @availability.scheduled_date.to_fs(:full_readable)
+      .actions
+        = link_to "Book this Timeslot", new_availability_booking_path(@availability), class: "button"
+        = link_to "Edit", edit_property_availability_path(@property, @availability), class: "button"
+        = link_to "Destroy", property_availability_path(@property, @availability), class: "button -red", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this availability?" }
+  %section.section
+    .booking-list
+      - @bookings.each do |booking|
+        = render "bookings/card", booking: booking

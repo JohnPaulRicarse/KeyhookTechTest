@@ -16,11 +16,11 @@
   .datetime {
     margin-top: 1rem;
     font-size: 2rem;
-    flex: 1 1 calc(100% - 200px);
+    flex: 1 1 auto;
   }
 
   .actions {
-    flex: 1 1 200px;
+    flex: 1 1 400px;
     justify-content: right;
   }
 }

@@ -1,0 +1,11 @@
+- booking.errors.full_messages.each do |error|
+  .flash.-error
+    = error
+
+= form_with model: booking, url: path, class: "form" do |form|
+  .form-group
+    = form.label :potential_tenant_name, "Please enter your name"
+    = form.text_field :potential_tenant_name, required: true
+
+  .form-group
+    = form.submit "Submit", class: "button"

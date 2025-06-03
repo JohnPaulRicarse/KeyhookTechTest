@@ -4,4 +4,5 @@ class Availability < ApplicationRecord
   validates_presence_of :property, message: "must exist"
 
   belongs_to :property
+  has_many :bookings
 end
