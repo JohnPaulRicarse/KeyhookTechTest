@@ -7,3 +7,14 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+require 'ffaker'
+
+5.times do
+  street_address = FFaker::Address.street_address
+  Property.create(
+    name: street_address,
+    description: FFaker::Book.description,
+    address: "#{street_address}, #{FFaker::Address.neighborhood}, #{FFaker::Address.city}"
+  )
+end
