@@ -1,0 +1,13 @@
+@use "shared/variables";
+
+.main-nav {
+  margin-top: 1rem;
+  display: flex;
+  background-color: variables.$blue;
+  width: 100%;
+
+  .link {
+    flex: 100%;
+    padding: 8px 16px;
+  }
+}

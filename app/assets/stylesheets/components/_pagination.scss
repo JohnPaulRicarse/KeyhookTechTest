@@ -1,0 +1,10 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
+
+  > span {
+    margin: 0.3rem;
+    padding: 0.2rem;
+  }
+}
