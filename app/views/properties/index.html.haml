@@ -8,7 +8,7 @@
         %span.address= property.address
         %p.description= truncate(property.description, length: 150)
         %p.availabilities
-          = property.availabilities.count
+          = property.availabilities.future.count
           Available timeslots
 
 = paginate @properties
