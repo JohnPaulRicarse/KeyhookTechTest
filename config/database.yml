@@ -11,9 +11,6 @@ development:
 
 test:
   <<: *default
-  host: <%= ENV['POSTGRES_HOST'] {'localhost'} %>
-  user: <%= ENV['POSTGRES_USER'] {'postgres'}%>
-  password: <%= ENV['POSTGRES_PASSWORD'] {'postgres'} %>
   database: tech_test_test
 
 production:
