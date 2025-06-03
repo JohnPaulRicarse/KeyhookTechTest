@@ -5,6 +5,7 @@ class AvailabilitiesController < ApplicationController
   before_action :find_availability, only: [ :show, :edit, :update, :destroy ]
 
   def show
+    @bookings = @availability.bookings
   end
 
   def new

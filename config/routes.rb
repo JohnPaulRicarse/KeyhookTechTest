@@ -15,4 +15,8 @@ Rails.application.routes.draw do
   resources :properties do
     resources :availabilities
   end
+
+  resources :availabilities, only: [] do
+    resources :bookings
+  end
 end

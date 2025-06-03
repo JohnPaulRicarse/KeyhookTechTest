@@ -3,6 +3,7 @@
 @use "layout/container";
 @use "layout/property";
 @use "layout/availability";
+@use "layout/article";
 
 @use "components/nav";
 @use "components/pagination";
@@ -10,6 +11,7 @@
 @use "components/form";
 @use "components/property-list";
 @use "components/availability-list";
+@use "components/booking-list";
 @use "components/actions";
 @use "components/flash";
 

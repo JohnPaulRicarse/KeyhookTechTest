@@ -1,0 +1,13 @@
+
+%article.article
+  %section.section
+    .section-header You are Booking
+    = render "properties/details", property: @property, show_actions: false
+
+  %section.section
+    .section-header
+      For the timeslot of:
+      = @availability.scheduled_date.to_fs(:full_readable)
+
+  %section.section
+    = render "form", booking: @booking, path: availability_bookings_path(@availability)
