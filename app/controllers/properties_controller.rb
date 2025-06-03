@@ -3,6 +3,6 @@ class PropertiesController < ApplicationController
   allow_browser versions: :modern
 
   def index
-    @properties = Propery.all
+    @properties = Property.all
   end
 end
