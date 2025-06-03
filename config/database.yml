@@ -8,6 +8,7 @@ default: &default
 development:
   <<: *default
   database: tech_test_development
+
 test:
   <<: *default
   host: <%= ENV['POSTGRES_HOST'] {'localhost'} %>

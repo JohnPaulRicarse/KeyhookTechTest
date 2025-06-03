@@ -78,7 +78,7 @@ jobs:
 
     steps:
       - name: Install packages
-        run: sudo apt-get update && sudo apt-get install --no-install-recommends -y build-essential git libyaml-dev pkg-config google-chrome-stable
+        run: sudo apt-get update && sudo apt-get install --no-install-recommends -y build-essential git libyaml-dev pkg-config google-chrome-stable libpq-dev
 
       - name: Checkout code
         uses: actions/checkout@v4
@@ -92,7 +92,7 @@ jobs:
       - name: Run tests
         env:
           RAILS_ENV: test
-          POSTGRES_HOST: localhost
+          DATABASE_URL: postgres://postgres:postgres@localhost:5432
           # The default PostgreSQL port
           POSTGRES_PORT: 5432
           # REDIS_URL: redis://localhost:6379/0
