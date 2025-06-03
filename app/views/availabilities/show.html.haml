@@ -14,4 +14,4 @@
   %section.section
     .booking-list
       - @bookings.each do |booking|
-        = render "bookings/card", booking: booking
+        = render "bookings/card", booking: booking, availability: @availability

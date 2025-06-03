@@ -3,6 +3,7 @@ class BookingsController < ApplicationController
   allow_browser versions: :modern
   before_action :find_availability
   before_action :find_property
+  before_action :find_booking, except: [:new, :create]
 
   def new
     @booking = Booking.new
@@ -18,6 +19,25 @@ class BookingsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @booking.update(booking_params)
+      flash[:notice] = "Successfully updated the booking."
+      redirect_to property_availability_path(@property, @availability)
+    else
+      flash[:error] = "Failed to update the booking."
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @booking.destroy
+    flash[:notice] = "Successfully removed the booking."
+    redirect_to property_availability_path(@property, @availability)
+  end
+
   private
 
   def find_availability
@@ -26,6 +46,10 @@ class BookingsController < ApplicationController
 
   def find_property
     @property = @availability.property
+  end
+
+  def find_booking
+    @booking = Booking.find(params[:id])
   end
 
   def booking_params

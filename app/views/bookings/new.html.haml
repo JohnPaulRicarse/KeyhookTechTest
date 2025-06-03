@@ -10,4 +10,4 @@
       = @availability.scheduled_date.to_fs(:full_readable)
 
   %section.section
-    = render "form", booking: @booking, path: availability_bookings_path
+    = render "form", booking: @booking, path: availability_bookings_path(@availability)

@@ -1,3 +1,6 @@
 .booking-card
   .tenant-name
     = booking.potential_tenant_name
+  .actions
+    = link_to "Edit", edit_availability_booking_path(availability, booking), class: "button"
+    = link_to "Destroy", availability_booking_path(availability, booking), class: "button -red", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this booking?" }

@@ -32,6 +32,12 @@
     .tenant-name {
       margin: 1rem 0 0.5rem 1rem;
       font-size: 1.5rem;
+      flex: 1 1 auto;
+    }
+
+    .actions {
+      flex: 0 0 auto;
+      justify-content: right;
     }
   }
 }
