@@ -1,6 +1,4 @@
-- booking.errors.full_messages.each do |error|
-  .flash.-error
-    = error
+= render "shared/error_message", errors: booking.errors
 
 = form_with model: booking, url: path, class: "form" do |form|
   .form-group
