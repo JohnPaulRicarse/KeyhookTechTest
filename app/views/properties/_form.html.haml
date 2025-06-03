@@ -1,0 +1,15 @@
+= form_with model: property, class: "form" do |form|
+  .form-group
+    = form.label :name
+    = form.text_field :name
+
+  .form-group
+    = form.label :description
+    = form.textarea :description
+
+  .form-group
+    = form.label :address
+    = form.text_field :address
+
+  .form-group
+    = form.submit "Submit", class: "button"

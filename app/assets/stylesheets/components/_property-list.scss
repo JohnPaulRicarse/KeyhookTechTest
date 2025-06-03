@@ -1,6 +1,7 @@
 @use "shared/variables";
 
 .property-list {
+  margin-top: 0.2rem;
   display: flex;
   flex-wrap: wrap;
   .property-card {
@@ -9,6 +10,7 @@
     flex-wrap: wrap;
     background-color: variables.$grey;
     padding: 1rem;
+    color: variables.$black;
 
     transition: 0.2s all ease-in-out;
 
@@ -18,7 +20,24 @@
 
     &:hover {
       transform: translate(0, -5px);
-      box-shadow: 0px 5px;
+      box-shadow: 0px 5px variables.$black;
+    }
+
+    .name,
+    .address,
+    .description {
+      display: block;
+      width: 100%;
+    }
+
+    .name {
+      margin: 0.3rem 0;
+    }
+
+    .address {
+      margin-bottom: 0.3rem;
+      color: variables.$dark-grey;
+      font-weight: 600;
     }
   }
 }

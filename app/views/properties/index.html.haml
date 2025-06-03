@@ -1,8 +1,10 @@
+%div
+  = link_to "New Property", new_property_path, class: "button"
 .property-list
   - @properties.each do |property|
     = link_to property, class: "property-card" do
       %h1.name= property.name
-      %p.description= truncate(property.description, length: 150)
       %span.address= property.address
+      %p.description= truncate(property.description, length: 150)
 
 = paginate @properties
