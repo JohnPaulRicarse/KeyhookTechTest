@@ -3,6 +3,6 @@ class PropertiesController < ApplicationController
   allow_browser versions: :modern
 
   def index
-    @properties = Property.all
+    @properties = Property.all.order(:created_at).page(params[:page]).per(10)
   end
 end

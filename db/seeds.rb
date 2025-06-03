@@ -10,7 +10,7 @@
 
 require 'ffaker'
 
-5.times do
+15.times do
   street_address = FFaker::Address.street_address
   Property.create(
     name: street_address,

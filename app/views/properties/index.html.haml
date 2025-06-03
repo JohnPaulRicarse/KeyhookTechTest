@@ -1,2 +1,8 @@
-.kek
-  %h1 Property List
+.property-list
+  - @properties.each do |property|
+    .property-card
+      %h1.name= property.name
+      %p.description= truncate(property.description, length: 150)
+      %span.address= property.address
+
+= paginate @properties
