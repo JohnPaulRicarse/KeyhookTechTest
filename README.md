@@ -1,5 +1,7 @@
 # README
-### System dependencies
+
+## You can check the Technical Test notes [here](https://github.com/JohnPaulRicarse/KeyhookTechTest/wiki/General-Notes)
+### System dependencie
   ```
     Ruby 3.4.4
     Postgres 16.9
