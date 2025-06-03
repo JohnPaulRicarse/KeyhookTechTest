@@ -3,7 +3,7 @@ class BookingsController < ApplicationController
   allow_browser versions: :modern
   before_action :find_availability
   before_action :find_property
-  before_action :find_booking, except: [:new, :create]
+  before_action :find_booking, except: [ :new, :create ]
 
   def new
     @booking = Booking.new
