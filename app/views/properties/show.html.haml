@@ -1,9 +1,11 @@
-.property
+= render "properties/details", property: @property
 
-  %h1.name= @property.name
-  %p.address= @property.address
-  %p.description= @property.description
-
-  .actions
-    = link_to "Edit", edit_property_path(@property), class: "button"
-    = link_to "Destroy", property_path(@property), class: "button -red", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this property?" }
+.availabilities
+  %h2 Availabilities
+  - @grouped_availabilities.each do |date, availabilities|
+    .availability-list
+      .day
+        = date.to_datetime.to_fs(:basic_date)
+      - availabilities.each do |availability|
+        = render "availabilities/card", availability: availability, property: @property
+  = paginate @availabilities

@@ -1,0 +1,15 @@
+- availability.errors.full_messages.each do |error|
+  .flash.-error
+    = error
+
+= form_with model: availability, url: path, class: "form" do |form|
+  .form-group
+    = form.label :manager_name
+    = form.text_field :manager_name, required: true
+
+    .form-group
+    = form.label :scheduled_date
+    = form.datetime_local_field :scheduled_date, required: true
+
+  .form-group
+    = form.submit "Submit", class: "button"

@@ -1,0 +1,9 @@
+.property
+  %h1.name= link_to property.name, property_path(property)
+  %p.address= property.address
+  %p.description= property.description
+
+  .actions
+    = link_to "New Availability", new_property_availability_path(property), class: "button"
+    = link_to "Edit", edit_property_path(property), class: "button"
+    = link_to "Destroy", property_path(property), class: "button -red", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this property?" }

@@ -10,9 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_06_03_091116) do
+ActiveRecord::Schema[8.0].define(version: 2025_06_03_134739) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
+
+  create_table "availabilities", force: :cascade do |t|
+    t.string "manager_name", null: false
+    t.datetime "scheduled_date", null: false
+    t.bigint "property_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["property_id"], name: "index_availabilities_on_property_id"
+  end
 
   create_table "properties", force: :cascade do |t|
     t.string "name", null: false
@@ -21,4 +30,6 @@ ActiveRecord::Schema[8.0].define(version: 2025_06_03_091116) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_foreign_key "availabilities", "properties"
 end

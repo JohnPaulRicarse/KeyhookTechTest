@@ -1,0 +1,5 @@
+%h1
+  Editing Availability for:
+  = link_to " #{@property.name}", property_path(@property)
+
+= render "form", availability: @availability, path: property_availability_path(@property, @availability)
