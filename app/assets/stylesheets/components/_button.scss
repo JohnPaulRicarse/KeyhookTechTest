@@ -15,4 +15,8 @@
     transform: translate(0, -3px);
     box-shadow: 0px 3px variables.$black;
   }
+
+  &.-red {
+    background-color: variables.$red;
+  }
 }

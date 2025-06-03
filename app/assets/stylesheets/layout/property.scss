@@ -1,0 +1,12 @@
+@use "shared/variables";
+
+.property {
+  .name {
+    margin-bottom: 0.5rem;
+  }
+  .address {
+    color: variables.$dark-grey;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+}
