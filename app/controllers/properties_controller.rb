@@ -17,7 +17,7 @@ class PropertiesController < ApplicationController
                                .page(params[:page])
                                .per(5)
 
-    unless params["show_all"] == "0"
+    if params["future_only"] == "1"
       @availabilities = @availabilities.future
     end
 
